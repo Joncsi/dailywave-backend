@@ -119,12 +119,5 @@ const logout = (req, res) => {
     res.status(200).json({ message: 'Sikeresen kijelentkeztél' });
 };
 
-const checkAuth = (req, res) => {
-    if (!req.user) {
-        return res.status(401).json({ error: 'Hozzáférés megtagadva!' });
-    }
 
-    res.status(200).json({ message: 'Felhasználó bejelentkezve.', user: req.user });
-};
-
-module.exports = { register, login, logout, checkAuth }
+module.exports = { register, login, logout }
